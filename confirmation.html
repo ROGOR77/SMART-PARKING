@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reservation Confirmation</title>
+  <link rel="stylesheet" href="confirmation.css" />
+</head>
+<body>
+  <div class="confirmation-container">
+    <h1>Your Reservation is Confirmed! 🎉</h1>
+    <div id="reservation-info"></div>
+    <button onclick="goHome()">Back to Home</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    const car = params.get("car");
+    const spot = params.get("spot");
+    const start = params.get("start");
+    const end = params.get("end");
+
+    const info = `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Car Plate:</strong> ${car}</p>
+      <p><strong>Parking Spot:</strong> ${spot}</p>
+      <p><strong>Start Time:</strong> ${new Date(start).toLocaleString()}</p>
+      <p><strong>End Time:</strong> ${new Date(end).toLocaleString()}</p>
+    `;
+
+    document.getElementById("reservation-info").innerHTML = info;
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

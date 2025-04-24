@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parking Reservation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Reserve Your Parking Spot</h1>
+    <form id="reservation-form">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="car">Car Plate Number:</label>
+      <input type="text" id="car" name="car" required>
+
+      <label for="spot">Select Parking Spot:</label>
+      <select id="spot" name="spot" required>
+        <option value="">-- Select Your Spot --</option>
+        <option value="A1">A1</option>
+        <option value="A2">A2</option>
+        <option value="A3">A3</option>
+        <option value="B1">B1</option>
+        <option value="B2">B2</option>
+        <option value="B3">B3</option>
+        <option value="C1">C1</option>
+        <option value="C2">C2</option>
+        <option value="C3">C3</option>
+        <option value="C4">C4</option>
+      </select>
+
+      <label for="start">Start Time:</label>
+      <input type="datetime-local" id="start" name="start" required>
+
+      <label for="end">End Time:</label>
+      <input type="datetime-local" id="end" name="end" required>
+
+      <button type="button" id="toggleMap">Show Parking Map</button>
+      <img id="gpsMap" src="gps-map.png" alt="Parking Map" class="gps-image hidden">
+
+      <button type="submit">Confirm Reservation</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
